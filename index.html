@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AnimeVerse</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #080808;
+      color: white;
+    }
+
+    header {
+      height: 65px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      background: #111;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: bold;
+      color: #ff3d81;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 15px;
+      font-size: 14px;
+    }
+
+    .hero {
+      min-height: 430px;
+      padding: 80px 25px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(90deg, #080808 20%, transparent),
+        linear-gradient(0deg, #080808, transparent);
+    }
+
+    .hero-content {
+      max-width: 550px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      color: #ccc;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    .watch-btn {
+      background: #ff3d81;
+      color: white;
+      border: none;
+      padding: 13px 22px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .section {
+      padding: 25px;
+    }
+
+    .section h2 {
+      margin-bottom: 18px;
+    }
+
+    .search {
+      width: 100%;
+      max-width: 500px;
+      padding: 13px;
+      border: none;
+      border-radius: 6px;
+      margin-bottom: 25px;
+      background: #1b1b1b;
+      color: white;
+      outline: none;
+    }
+
+    .anime-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 18px;
+    }
+
+    .anime-card {
+      background: #151515;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: 0.2s;
+    }
+
+    .anime-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .poster {
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #32105f, #ff3d81);
+      font-size: 45px;
+    }
+
+    .anime-info {
+      padding: 12px;
+    }
+
+    .anime-info h3 {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    .anime-info p {
+      color: #999;
+      font-size: 13px;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding: 30px;
+      text-align: center;
+      background: #111;
+      color: #777;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      nav a {
+        font-size: 12px;
+        margin-left: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">AnimeVerse</div>
+
+    <nav>
+      <a href="#">Home</a>
+      <a href="#anime">Anime</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Watch Anime</h1>
+
+      <p>
+        Discover anime, explore new worlds and find your next favourite series.
+      </p>
+
+      <button class="watch-btn" onclick="scrollToAnime()">
+        Explore Anime
+      </button>
+    </div>
+  </section>
+
+  <section class="section" id="anime">
+
+    <h2>🔥 Popular Anime</h2>
+
+    <input
+      class="search"
+      type="text"
+      id="search"
+      placeholder="Search anime..."
+      onkeyup="searchAnime()"
+    >
+
+    <div class="anime-grid" id="animeGrid">
+
+      <div class="anime-card">
+        <div class="poster">⚔️</div>
+        <div class="anime-info">
+          <h3>Sample Anime 1</h3>
+          <p>Action • Adventure</p>
+        </div>
+      </div>
+
+      <div class="anime-card">
+        <div class="poster">🔥</div>
+        <div class="anime-info">
+          <h3>Sample Anime 2</h3>
+          <p>Action • Fantasy</p>
+        </div>
+      </div>
+
+      <div class="anime-card">
+        <div class="poster">🌙</div>
+        <div class="anime-info">
+          <h3>Sample Anime 3</h3>
+          <p>Fantasy • Drama</p>
+        </div>
+      </div>
+
+      <div class="anime-card">
+        <div class="poster">⚡</div>
+        <div class="anime-info">
+          <h3>Sample Anime 4</h3>
+          <p>Adventure • Fantasy</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer id="about">
+    © 2026 AnimeVerse • Built with AI
+  </footer>
+
+  <script>
+    function scrollToAnime() {
+      document.getElementById("anime").scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+
+    function searchAnime() {
+      let input = document
+        .getElementById("search")
+        .value
+        .toLowerCase();
+
+      let cards = document.querySelectorAll(".anime-card");
+
+      cards.forEach(function(card) {
+        let title = card
+          .querySelector("h3")
+          .innerText
+          .toLowerCase();
+
+        if (title.includes(input)) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
