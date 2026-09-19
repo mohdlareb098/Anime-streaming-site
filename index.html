@@ -14,11 +14,16 @@
   font-family:Arial,sans-serif;
 }
 
-body{
-  background:#070707;
-  color:white;
+html{
+  scroll-behavior:smooth;
 }
 
+body{
+  background:#030303;
+  color:#fff;
+}
+
+/* HEADER */
 header{
   position:sticky;
   top:0;
@@ -28,19 +33,21 @@ header{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  background:rgba(12,12,12,.96);
-  border-bottom:1px solid #222;
+  background:#050505;
+  border-bottom:1px solid #12363b;
+  box-shadow:0 0 20px rgba(0,229,255,.08);
 }
 
 .logo{
   font-size:26px;
   font-weight:800;
-  color:#ff2f7d;
+  color:#00e5ff;
+  text-shadow:0 0 12px rgba(0,229,255,.6);
 }
 
 nav{
   display:flex;
-  gap:25px;
+  gap:22px;
 }
 
 nav a{
@@ -50,19 +57,19 @@ nav a{
 }
 
 nav a:hover{
-  color:#ff2f7d;
+  color:#00e5ff;
 }
 
 /* HERO */
-
 .hero{
-  min-height:480px;
-  padding:80px 7%;
+  min-height:470px;
+  padding:75px 7%;
   display:flex;
   align-items:center;
+
   background:
-    radial-gradient(circle at 75% 40%,#5d126e 0%,transparent 35%),
-    linear-gradient(120deg,#080808,#180b1d);
+    radial-gradient(circle at 75% 40%,#006b78 0%,transparent 32%),
+    linear-gradient(120deg,#030303,#061719);
 }
 
 .hero-content{
@@ -73,24 +80,26 @@ nav a:hover{
   display:inline-block;
   padding:7px 13px;
   border-radius:20px;
-  background:#ff2f7d;
+  background:#00e5ff;
+  color:#001114;
   font-size:12px;
   font-weight:bold;
   margin-bottom:18px;
 }
 
 .hero h1{
-  font-size:55px;
+  font-size:52px;
   line-height:1.05;
   margin-bottom:18px;
 }
 
 .hero h1 span{
-  color:#ff2f7d;
+  color:#00e5ff;
+  text-shadow:0 0 15px rgba(0,229,255,.5);
 }
 
 .hero p{
-  color:#bbb;
+  color:#aaa;
   font-size:17px;
   line-height:1.7;
   margin-bottom:28px;
@@ -103,7 +112,7 @@ nav a:hover{
 
 .btn{
   border:0;
-  padding:14px 23px;
+  padding:14px 22px;
   border-radius:7px;
   font-weight:bold;
   cursor:pointer;
@@ -111,17 +120,22 @@ nav a:hover{
 }
 
 .primary{
-  background:#ff2f7d;
-  color:white;
+  background:#00e5ff;
+  color:#001114;
+  box-shadow:0 0 15px rgba(0,229,255,.25);
+}
+
+.primary:hover{
+  background:#6ff3ff;
 }
 
 .secondary{
-  background:#222;
-  color:white;
+  background:#111;
+  color:#fff;
+  border:1px solid #16434a;
 }
 
-/* SEARCH */
-
+/* SECTION */
 .section{
   padding:45px 6%;
 }
@@ -131,57 +145,61 @@ nav a:hover{
   margin-bottom:22px;
 }
 
+/* SEARCH */
 .search-box{
   display:flex;
   max-width:600px;
-  margin-bottom:28px;
+  margin-bottom:25px;
 }
 
 .search-box input{
   flex:1;
   padding:15px;
-  background:#171717;
-  border:1px solid #292929;
-  color:white;
+  background:#0c0c0c;
+  border:1px solid #17383d;
+  color:#fff;
   outline:none;
   border-radius:7px 0 0 7px;
+}
+
+.search-box input:focus{
+  border-color:#00e5ff;
 }
 
 .search-box button{
   padding:0 20px;
   border:0;
-  background:#ff2f7d;
-  color:white;
+  background:#00e5ff;
+  color:#001114;
   border-radius:0 7px 7px 0;
 }
 
 /* CATEGORIES */
-
 .categories{
   display:flex;
   gap:10px;
   overflow-x:auto;
-  margin-bottom:35px;
+  margin-bottom:30px;
+  padding-bottom:5px;
 }
 
 .category{
   white-space:nowrap;
   padding:9px 16px;
   border-radius:20px;
-  background:#191919;
-  color:#bbb;
-  border:1px solid #292929;
+  background:#0d0d0d;
+  color:#aaa;
+  border:1px solid #17383d;
   cursor:pointer;
 }
 
 .category.active,
 .category:hover{
-  background:#ff2f7d;
-  color:white;
+  background:#00e5ff;
+  color:#001114;
 }
 
 /* CARDS */
-
 .grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
@@ -189,38 +207,43 @@ nav a:hover{
 }
 
 .card{
-  background:#141414;
+  background:#0b0b0b;
   border-radius:10px;
   overflow:hidden;
-  border:1px solid #222;
+  border:1px solid #15383d;
   transition:.25s;
 }
 
 .card:hover{
   transform:translateY(-6px);
-  border-color:#ff2f7d;
+  border-color:#00e5ff;
+  box-shadow:0 0 20px rgba(0,229,255,.12);
 }
 
 .poster{
-  height:260px;
+  height:250px;
   display:flex;
   justify-content:center;
   align-items:center;
   font-size:65px;
+
   background:
-    linear-gradient(135deg,#351060,#ff2779);
+    linear-gradient(135deg,#003b43,#00a9bd);
 }
 
 .poster.two{
-  background:linear-gradient(135deg,#09203f,#21d4fd);
+  background:
+    linear-gradient(135deg,#001d2b,#007f91);
 }
 
 .poster.three{
-  background:linear-gradient(135deg,#38120c,#ff8a00);
+  background:
+    linear-gradient(135deg,#002d32,#00c9b7);
 }
 
 .poster.four{
-  background:linear-gradient(135deg,#151515,#626262);
+  background:
+    linear-gradient(135deg,#07191c,#008da0);
 }
 
 .info{
@@ -239,23 +262,24 @@ nav a:hover{
 
 .rating{
   margin-top:10px;
-  color:#ffc107;
+  color:#00e5ff;
   font-size:13px;
 }
 
-/* FEATURE */
-
+/* AI BOX */
 .feature{
-  margin-top:15px;
+  margin-top:10px;
   padding:35px;
   border-radius:12px;
   background:
-    linear-gradient(110deg,#20102b,#111);
-  border:1px solid #292929;
+    linear-gradient(110deg,#061c20,#0b0b0b);
+  border:1px solid #16434a;
+  box-shadow:0 0 25px rgba(0,229,255,.05);
 }
 
 .feature h2{
-  font-size:28px;
+  color:#00e5ff;
+  font-size:27px;
   margin-bottom:10px;
 }
 
@@ -266,22 +290,20 @@ nav a:hover{
 }
 
 /* FOOTER */
-
 footer{
   margin-top:40px;
   padding:35px 6%;
   text-align:center;
   color:#777;
-  background:#101010;
-  border-top:1px solid #222;
+  background:#050505;
+  border-top:1px solid #12363b;
 }
 
 footer strong{
-  color:#ff2f7d;
+  color:#00e5ff;
 }
 
 /* MOBILE */
-
 @media(max-width:800px){
 
   header{
@@ -293,7 +315,7 @@ footer strong{
   }
 
   nav{
-    gap:13px;
+    gap:12px;
   }
 
   nav a{
@@ -306,7 +328,7 @@ footer strong{
   }
 
   .hero h1{
-    font-size:42px;
+    font-size:40px;
   }
 
   .hero p{
@@ -323,7 +345,7 @@ footer strong{
   }
 
   .poster{
-    height:210px;
+    height:190px;
   }
 
   .info{
@@ -338,7 +360,7 @@ footer strong{
 @media(max-width:430px){
 
   .hero h1{
-    font-size:37px;
+    font-size:36px;
   }
 
   .grid{
@@ -346,7 +368,7 @@ footer strong{
   }
 
   .poster{
-    height:180px;
+    height:170px;
     font-size:50px;
   }
 
@@ -379,7 +401,9 @@ footer strong{
 
   <div class="hero-content">
 
-    <div class="badge">WELCOME TO ANIMEVERSE</div>
+    <div class="badge">
+      WELCOME TO ANIMEVERSE
+    </div>
 
     <h1>
       Discover Your Next
@@ -387,19 +411,21 @@ footer strong{
     </h1>
 
     <p>
-      Explore anime worlds, discover new series and find
-      something amazing to watch.
+      Explore amazing anime worlds and discover
+      your next favourite series.
     </p>
 
     <div class="buttons">
 
-      <button class="btn primary"
-      onclick="document.getElementById('anime').scrollIntoView()">
+      <button
+        class="btn primary"
+        onclick="document.getElementById('anime').scrollIntoView()">
         ▶ Explore Anime
       </button>
 
-      <button class="btn secondary"
-      onclick="alert('Watchlist feature coming soon!')">
+      <button
+        class="btn secondary"
+        onclick="alert('Watchlist coming soon!')">
         + Watchlist
       </button>
 
@@ -410,11 +436,13 @@ footer strong{
 </section>
 
 
-<!-- ANIME -->
+<!-- ANIME SECTION -->
 
 <section class="section" id="anime">
 
-  <h2 class="title">🔥 Trending Anime</h2>
+  <h2 class="title">
+    🔥 Trending Anime
+  </h2>
 
   <div class="search-box">
 
@@ -422,8 +450,7 @@ footer strong{
       id="search"
       type="text"
       placeholder="Search anime..."
-      onkeyup="searchAnime()"
-    >
+      onkeyup="searchAnime()">
 
     <button>🔍</button>
 
@@ -432,30 +459,55 @@ footer strong{
 
   <div class="categories" id="genres">
 
-    <div class="category active">All</div>
-    <div class="category">Action</div>
-    <div class="category">Adventure</div>
-    <div class="category">Fantasy</div>
-    <div class="category">Comedy</div>
-    <div class="category">Drama</div>
+    <div class="category active">
+      All
+    </div>
+
+    <div class="category">
+      Action
+    </div>
+
+    <div class="category">
+      Adventure
+    </div>
+
+    <div class="category">
+      Fantasy
+    </div>
+
+    <div class="category">
+      Comedy
+    </div>
+
+    <div class="category">
+      Drama
+    </div>
 
   </div>
 
 
-  <div class="grid" id="animeGrid">
+  <div class="grid">
 
 
     <div class="card">
 
-      <div class="poster">⚔️</div>
+      <div class="poster">
+        ⚔️
+      </div>
 
       <div class="info">
 
-        <h3>Shadow Warriors</h3>
+        <h3>
+          Shadow Warriors
+        </h3>
 
-        <p>Action • Adventure</p>
+        <p>
+          Action • Adventure
+        </p>
 
-        <div class="rating">★ 9.2</div>
+        <div class="rating">
+          ★ 9.2
+        </div>
 
       </div>
 
@@ -464,15 +516,23 @@ footer strong{
 
     <div class="card">
 
-      <div class="poster two">⚡</div>
+      <div class="poster two">
+        ⚡
+      </div>
 
       <div class="info">
 
-        <h3>Sky Legends</h3>
+        <h3>
+          Sky Legends
+        </h3>
 
-        <p>Fantasy • Action</p>
+        <p>
+          Fantasy • Action
+        </p>
 
-        <div class="rating">★ 8.9</div>
+        <div class="rating">
+          ★ 8.9
+        </div>
 
       </div>
 
@@ -481,15 +541,23 @@ footer strong{
 
     <div class="card">
 
-      <div class="poster three">🔥</div>
+      <div class="poster three">
+        🔥
+      </div>
 
       <div class="info">
 
-        <h3>Flame Rising</h3>
+        <h3>
+          Flame Rising
+        </h3>
 
-        <p>Action • Fantasy</p>
+        <p>
+          Action • Fantasy
+        </p>
 
-        <div class="rating">★ 9.0</div>
+        <div class="rating">
+          ★ 9.0
+        </div>
 
       </div>
 
@@ -498,15 +566,23 @@ footer strong{
 
     <div class="card">
 
-      <div class="poster four">🌙</div>
+      <div class="poster four">
+        🌙
+      </div>
 
       <div class="info">
 
-        <h3>Moon Chronicles</h3>
+        <h3>
+          Moon Chronicles
+        </h3>
 
-        <p>Drama • Fantasy</p>
+        <p>
+          Drama • Fantasy
+        </p>
 
-        <div class="rating">★ 8.7</div>
+        <div class="rating">
+          ★ 8.7
+        </div>
 
       </div>
 
@@ -518,23 +594,24 @@ footer strong{
 </section>
 
 
-<!-- FEATURE -->
+<!-- AI SECTION -->
 
 <section class="section">
 
   <div class="feature">
 
-    <h2>🤖 AI Anime Assistant</h2>
+    <h2>
+      🤖 AI Anime Assistant
+    </h2>
 
     <p>
-      Find your next anime using our future AI recommendation
-      system. Tell us what kind of anime you like and we'll
-      help you discover similar shows.
+      Tell us what kind of anime you like and
+      discover recommendations that match your taste.
     </p>
 
     <button
       class="btn primary"
-      onclick="alert('AI recommendation system coming soon!')">
+      onclick="alert('AI recommendations coming soon!')">
       Try AI Recommendations
     </button>
 
@@ -543,13 +620,15 @@ footer strong{
 </section>
 
 
+<!-- FOOTER -->
+
 <footer id="about">
 
   <strong>AnimeVerse</strong>
 
   <br><br>
 
-  Discover. Explore. Enjoy.
+  Discover • Explore • Enjoy
 
   <br><br>
 
@@ -563,24 +642,31 @@ footer strong{
 function searchAnime(){
 
   let input =
-    document.getElementById("search")
+    document
+    .getElementById("search")
     .value
     .toLowerCase();
 
   let cards =
-    document.querySelectorAll(".card");
+    document
+    .querySelectorAll(".card");
 
   cards.forEach(function(card){
 
     let title =
-      card.querySelector("h3")
+      card
+      .querySelector("h3")
       .innerText
       .toLowerCase();
 
     if(title.includes(input)){
+
       card.style.display="block";
+
     }else{
+
       card.style.display="none";
+
     }
 
   });
@@ -588,16 +674,19 @@ function searchAnime(){
 }
 
 
-document.querySelectorAll(".category")
+document
+.querySelectorAll(".category")
 .forEach(function(button){
 
   button.addEventListener("click",function(){
 
     document
-      .querySelectorAll(".category")
-      .forEach(function(b){
-        b.classList.remove("active");
-      });
+    .querySelectorAll(".category")
+    .forEach(function(b){
+
+      b.classList.remove("active");
+
+    });
 
     button.classList.add("active");
 
