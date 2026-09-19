@@ -543,104 +543,79 @@ footer strong{color:#00e5ff}
 <script>
 
 const animeData = {
-
-  "Shadow Warriors":{
-    rating:"★ 9.2",
-    genre:"Action • Adventure",
-    icon:"⚔️",
-    description:
-      "A fictional sample anime about warriors,
-      adventure and mysterious powers."
+  "Shadow Warriors": {
+    rating: "★ 9.2",
+    genre: "Action • Adventure",
+    icon: "⚔️",
+    description: "A fictional sample anime about warriors, adventure and mysterious powers."
   },
 
-  "Sky Legends":{
-    rating:"★ 8.9",
-    genre:"Fantasy • Action",
-    icon:"⚡",
-    description:
-      "A fictional fantasy adventure set among
-      mysterious skies and legendary heroes."
+  "Sky Legends": {
+    rating: "★ 8.9",
+    genre: "Fantasy • Action",
+    icon: "⚡",
+    description: "A fictional fantasy adventure set among mysterious skies and legendary heroes."
   },
 
-  "Flame Rising":{
-    rating:"★ 9.0",
-    genre:"Action • Fantasy",
-    icon:"🔥",
-    description:
-      "A fictional fantasy story filled with
-      powerful abilities and dangerous battles."
+  "Flame Rising": {
+    rating: "★ 9.0",
+    genre: "Action • Fantasy",
+    icon: "🔥",
+    description: "A fictional fantasy story filled with powerful abilities and dangerous battles."
   },
 
-  "Moon Chronicles":{
-    rating:"★ 8.7",
-    genre:"Drama • Fantasy",
-    icon:"🌙",
-    description:
-      "A fictional fantasy drama surrounding
-      secrets hidden beneath the moonlight."
+  "Moon Chronicles": {
+    rating: "★ 8.7",
+    genre: "Drama • Fantasy",
+    icon: "🌙",
+    description: "A fictional fantasy drama surrounding secrets hidden beneath the moonlight."
   }
-
 };
 
-function openAnime(name){
+function openAnime(name) {
 
-  let anime = animeData[name];
+  const anime = animeData[name];
 
   document.getElementById("detailTitle").innerText = name;
+  document.getElementById("detailRating").innerText = anime.rating;
+  document.getElementById("detailGenre").innerText = anime.genre;
+  document.getElementById("detailPoster").innerText = anime.icon;
+  document.getElementById("detailDescription").innerText = anime.description;
 
-  document.getElementById("detailRating").innerText =
-    anime.rating;
-
-  document.getElementById("detailGenre").innerText =
-    anime.genre;
-
-  document.getElementById("detailPoster").innerText =
-    anime.icon;
-
-  document.getElementById("detailDescription").innerText =
-    anime.description;
-
-  document.getElementById("animeModal").style.display =
-    "block";
+  document.getElementById("animeModal").style.display = "block";
 }
 
-function closeAnime(){
-
-  document.getElementById("animeModal").style.display =
-    "none";
+function closeAnime() {
+  document.getElementById("animeModal").style.display = "none";
 }
 
-function episodeMessage(number){
-
-  alert(
-    "Episode " + number +
-    " player will be added after authorized video content is connected."
-  );
-
+function episodeMessage(number) {
+  alert("Episode " + number + " player will be added soon.");
 }
 
-function searchAnime(){
+function searchAnime() {
 
-  let input =
-    document.getElementById("search")
+  const input = document
+    .getElementById("search")
     .value
     .toLowerCase();
 
-  let cards =
-    document.querySelectorAll(".card");
+  const cards = document.querySelectorAll(".card");
 
-  cards.forEach(function(card){
+  cards.forEach(function(card) {
 
-    let title =
-      card.querySelector("h3")
+    const title = card
+      .querySelector("h3")
       .innerText
       .toLowerCase();
 
-    card.style.display =
-      title.includes(input) ? "block" : "none";
+    if (title.includes(input)) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
 
   });
-
 }
 
 </script>
