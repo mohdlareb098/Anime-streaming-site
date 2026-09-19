@@ -498,7 +498,37 @@ footer strong{color:#00e5ff}
       A fictional sample anime created for testing
       the AnimeVerse website.
     </p>
+<button class="btn primary"
+        onclick="watchEpisode(1)">
+  ▶ Watch Now
+</button>
 
+<div id="playerBox" style="display:none;margin-top:20px;">
+
+  <video id="videoPlayer"
+         controls
+         playsinline
+         style="width:100%;border-radius:10px;background:#000;">
+    <source id="videoSource"
+      src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+      type="video/mp4">
+  </video>
+
+  <div style="display:flex;gap:10px;margin-top:12px;">
+
+    <button class="btn secondary"
+            onclick="previousEpisode()">
+      ⏮ Previous
+    </button>
+
+    <button class="btn secondary"
+            onclick="nextEpisode()">
+      Next ⏭
+    </button>
+
+  </div>
+
+</div>
     <h3>Episodes</h3>
 
     <div class="episodes">
