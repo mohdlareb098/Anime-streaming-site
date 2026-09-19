@@ -647,7 +647,39 @@ function searchAnime() {
 
   });
 }
+let currentEpisode = 1;
 
+function watchEpisode(number) {
+
+  currentEpisode = number;
+
+  document.getElementById("playerBox").style.display = "block";
+
+  const video = document.getElementById("videoPlayer");
+
+  video.currentTime = 0;
+
+  video.play().catch(function() {});
+
+}
+
+function previousEpisode() {
+
+  if (currentEpisode > 1) {
+    currentEpisode--;
+  }
+
+  watchEpisode(currentEpisode);
+}
+
+function nextEpisode() {
+
+  if (currentEpisode < 6) {
+    currentEpisode++;
+  }
+
+  watchEpisode(currentEpisode);
+}
 </script>
 
 </body>
